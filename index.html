@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Ankara 3D</title>
+    <meta name="description" content="Explore downtown Ankara in 3D: Anıtkabir, Ankara Kalesi, Kocatepe, Atakule, Gençlik Parkı and Ulus at golden hour." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e30a17'/%3E%3Ccircle cx='13' cy='16' r='7' fill='white'/%3E%3Ccircle cx='14.8' cy='16' r='5.6' fill='%23e30a17'/%3E%3Cpath d='M23 12.5l1 3h3.1l-2.5 1.8 1 3-2.6-1.9-2.5 1.9 1-3-2.6-1.8h3.2z' fill='white'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="labels"></div>
+
+    <div id="loader">
+      <div class="loader-inner">
+        <div class="loader-title">Ankara</div>
+        <div class="loader-sub">Building the capital in 3D…</div>
+        <div class="loader-bar"><div id="loader-fill"></div></div>
+        <div id="loader-step">Loading terrain</div>
+      </div>
+    </div>
+
+    <header id="brand">
+      <div class="brand-title">Ankara <span>3D</span></div>
+      <div class="brand-sub">Downtown at golden hour</div>
+    </header>
+
+    <nav id="menu" aria-label="Landmarks">
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="true">Landmarks</button>
+      <div class="menu-body">
+        <button class="menu-item overview" data-id="overview"><span class="num">0</span><span><b>City overview</b><small>Ankara from above</small></span></button>
+        <div id="menu-items"></div>
+        <button id="tour-start" class="tour-btn">▶ Start guided tour <kbd>T</kbd></button>
+      </div>
+    </nav>
+
+    <aside id="card" class="hidden" aria-live="polite">
+      <button id="card-close" aria-label="Close">×</button>
+      <div class="card-kicker" id="card-sub"></div>
+      <h2 id="card-title"></h2>
+      <div class="card-en" id="card-en"></div>
+      <p id="card-text"></p>
+      <dl id="card-stats"></dl>
+      <div class="card-meta"><span id="card-built"></span><span id="card-arch"></span></div>
+    </aside>
+
+    <div id="tour-bar" class="hidden">
+      <div id="tour-progress"></div>
+      <span id="tour-label">Guided tour</span>
+      <button id="tour-pause">❚❚ Pause</button>
+      <button id="tour-next">Next ▶</button>
+      <button id="tour-exit">Exit</button>
+    </div>
+
+    <div id="hud">
+      <button id="compass" title="Reset north"><svg viewBox="0 0 40 40"><g id="needle"><path d="M20 5 L25 20 L20 18 L15 20Z" fill="#e30a17"/><path d="M20 35 L25 20 L20 22 L15 20Z" fill="#d8d2c6"/></g><text x="20" y="4.5" text-anchor="middle">N</text></svg></button>
+      <button id="btn-reset" title="Reset view">⌂</button>
+      <button id="btn-full" title="Fullscreen">⛶</button>
+    </div>
+    <div id="coords"></div>
+    <div id="help">Left-drag: pan · Right-drag / two fingers: rotate · Scroll: zoom · 1–6: landmarks</div>
+    <div id="attribution">Map data © OpenStreetMap contributors · Elevation: Mapzen Terrain Tiles (AWS)</div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
